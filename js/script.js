@@ -27,7 +27,13 @@ btnSubmitForm.addEventListener('click', (e) => {
     e.preventDefault()
 
     const nameTeam = document.querySelector('#name-team').value
+    const nameUser = document.querySelector('#users-team').value
+    const propose = document.querySelector('#propose-team').value
     let teamEncontrado = false;
+
+    if(nameTeam === '' || nameUser === '' || propose === ''){
+        modalAlert('Preencha todos os campos')
+    }
 
     listTeam.forEach(team => {
         if(nameTeam === team){
@@ -36,6 +42,8 @@ btnSubmitForm.addEventListener('click', (e) => {
             modalAlert('Equipe existente')
         }
     })
+
+
 
 
 })
